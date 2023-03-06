@@ -7,6 +7,9 @@
     @apply  bg-white/70 dark:bg-gray-900/50 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 md:border border-gray-200 dark:border-gray-600/10
   }
   .bg {
-    @apply  bg-white relative dark:bg-gray-900 text-gray-800 dark:text-gray-300
+    @apply  bg-gradient-to-tr from-indigo-800 to-cyan-400
+  }
+  .gradient-text {
+    @apply   bg-gradient-to-tr from-indigo-800 to-cyan-400 bg-clip-text text-transparent
   }
 }

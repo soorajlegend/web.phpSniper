@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 type Props = {
 data: {
@@ -8,7 +9,7 @@ data: {
 
 const NavItem = ({data}: Props) => {
   return (
-    <div className='capitalize'>{data?.name}</div>
+    <Link href={data?.url} className='capitalize '>{data?.name}</Link>
   )
 }
 

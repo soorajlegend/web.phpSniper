@@ -12,13 +12,10 @@ const Hero = () => {
         delaySpeed: 2000,
     });
   return (
-    <div className='w-full h-[80vh] flex items-center'>
-        <h1 className='text-5xl md:text-[8em] h-auto lg:text-[10em] bg-gradient-to-tr from-indigo-800 to-cyan-400 capitalize bg-clip-text text-transparent font-black'>
+    <div className='w-full pt-20 px-3 md:pt-0 md:px-0 md:h-[90vh] flex items-center'>
+        <h1 className='text-5xl md:text-[8em] h-auto lg:text-[8rem] gradient-text capitalize font-black'>
             {text}
             <Cursor cursorColor="#ccc" />
-            
-
-
         </h1>
     </div>
   )

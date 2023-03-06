@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Hero from '../../components/Hero'
+import Introduction from '../../components/Introduction'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -12,10 +10,11 @@ export default function Home() {
         <title>Php sniper</title>
         <meta name="php sniper" content="a light weight php library that make interaction with database more efficient" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/phpSniper.png" />
       </Head>
       <main className="flex flex-col md:max-w-5xl lg:max-w-7xl mx-auto">
        <Hero />
+       <Introduction />
       </main>
     </>
   )
