@@ -48,7 +48,7 @@ const Introduction = () => {
                         PHP Sniper is a powerful PHP library that provides a range of functions for managing and manipulating data in a database. With PHP Sniper, developers can easily add, retrieve, update and delete data in a database, making it an essential tool for any web development project. Our library is designed to be easy to use and highly flexible, with a focus on providing a streamlined and efficient experience for developers. Whether you are working on a small-scale personal project or a large enterprise-level application, PHP Sniper can help you simplify your workflow and streamline your database operations.
                     </p>
 
-                    <h1 className='text-2xl font-bold gradient-text'>Getstarted by cloning our github repository</h1>
+                    <h1 className='text-2xl font-bold gradient-text'>Get started by cloning our github repository</h1>
                     <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row  md:space-x-5">
                         <a target='_blank' href='https://github.com/phpSniper/php-sniper.git' className='bg rounded-xl px-5 flex items-center justify-center text-black font-semibold'>
                             Github
@@ -134,11 +134,11 @@ const Introduction = () => {
             <div className="flex flex-col md:flex-row md:space-x-10">
                 <div className="w-full">
                 <h1 className='text-2xl font-bold gradient-text'>Before</h1>
-                <Snippet code={deleteWithPhpSniper} />
+                <Snippet code={deleteWithoutPhpSniper} />
                 </div>
                 <div className="w-full">
                 <h1 className='text-2xl font-bold gradient-text'>After</h1>
-                <Snippet code={deleteWithoutPhpSniper} />
+                <Snippet code={deleteWithPhpSniper} />
                 </div>
             </div>
 
