@@ -15,7 +15,8 @@ const Snippet = ({code}:Props) => {
         words: [decodeURIComponent(code)
         ],
         loop: 1,
-        delaySpeed: 3000,
+        delaySpeed: 2000,
+        typeSpeed: 30,
         
         
     });
