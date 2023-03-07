@@ -1,7 +1,7 @@
 
 export const navigations = [
-    {name: "Home", url: "/"},
-    {name: "about us", url: "/about"},
+    {name: "Overview", url: "/"},
+    // {name: "about us", url: "/about"},
     {name: "features", url: "/features"},
     {name: "docs", url: "/docs"},
     {name: "blogs", url: "/blogs"},
@@ -209,9 +209,6 @@ mysqli_close($conn);
 export const deleteWithPhpSniper = `
 <?php
 include "./sniper.php";
-
-// Connect to the database
-$conn = connect();
 
 // Delete a row from the table
 $table = 'table_name'; /
