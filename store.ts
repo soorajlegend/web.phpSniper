@@ -283,19 +283,19 @@ export const functions = [
         ]
     },
     {
-        "title": "select All data",
+        "title": "Select All data",
         "description": `The simplest way to select all data from a table weither with condition or not is using fetch selectAll() function, here is the avaiable parameters that will help you select all the data you need from a table <br /> 
-        <ol>
+    
         <li>1st parameter: the name of the database table</li>
         <li>2nd parameter: the condition (optional), the function will return all if it's null</li>
         <li>3rd parameter: the order_by (optional), the method at which you wanted to fetch the data from database, its null by default  </li>
         <li>4th parameter: the columns you wanted to select(optional), the function will return all columns if it's null</li>
         <li>5th parameter: DISTINCT if you wanted to select distinct data from a table the tun it true otherwise it's false</li>
-        </ol>
+       
         `,
         "examples": [
             {
-                "title": "insert data with in a table",
+                "title": "Insert data with in a table",
                 "description": "to insert data in to a table, all you need is the table name, the columns name and data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
                 "code": `
                 <?php
@@ -312,7 +312,7 @@ export const functions = [
                 ?>`
             },
             {
-                "title": "insert data with in a table in an optimized conditional mode",
+                "title": "Insert data with in a table in an optimized conditional mode",
                 "description": "To insert data in to a table, in an optimzed way is to check directily if insert function returns true",
                 "code": `
                 <?php
