@@ -11,7 +11,7 @@ const features = () => {
                     <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore our <br /> awesome <Link href="/docs" className="underline decoration-blue-500">features</Link></h1>
 
                     <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-                        Are you a php developer? <br />  We guess you can't afford to miss this life changing library
+                        Are you a php developer? <br />  We guess you can&apos;t afford to miss this life changing library
                     </p>
                     <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
                         Are you not a php developer? <br /> We guess you you can just dive in to php development right after reading the following awesome features
