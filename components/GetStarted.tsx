@@ -49,12 +49,12 @@ const GetStarted = () => {
     ?>
     `
   return (
-<div className='px-10 space-y-5 py-5'>
+<div className='md:px-10 space-y-5 py-5'>
 <h1 className='text-2xl font-bold gradient-text'>Installation</h1>
 
 <div className="flex flex-col space-y-3 p-5 shadow-xl rounded-xl w-auto max-w-3xl dark:bg-gray-800">
     <h2 className='text-xl font-semibold'>Step 1</h2>
-    <p className="">Clone the PHP Sniper repository from GitHub or download the zip file from the github repository, then include it in your project directory. </p>
+    <p>Clone the PHP Sniper repository from GitHub or download the zip file from the github repository, then include it in your project directory. </p>
     <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row  md:space-x-5">
         <a target='_blank' href='https://github.com/phpSniper/php-sniper.git' className='bg rounded-xl px-5 flex items-center justify-center text-black font-semibold'>
             Github

@@ -17,7 +17,6 @@ type Props = {
 }
 
 const DocsDetails = ({ data }: Props) => {
-    console.log(data)
 
     if (data?.title === 'getStarted') {
         return <GetStarted />
@@ -25,7 +24,7 @@ const DocsDetails = ({ data }: Props) => {
 
 
     return (
-        <div className='px-10 space-y-5 py-10'>
+        <div className='md:px-10 space-y-5 py-10'>
             <h1 className='text-2xl font-bold gradient-text capitalize'>
                 {data?.title}
             </h1>
@@ -36,7 +35,7 @@ const DocsDetails = ({ data }: Props) => {
                     <div key={index} className="flex flex-col space-y-3 p-5 shadow-xl rounded-xl w-auto max-w-5xl dark:bg-gray-800">
                         <h2 className='text-xl font-semibold'>{example?.title}</h2>
                         <p>{example?.description}</p>
-                        <Snippet code={example?.code || ""} />
+                        <Snippet code={example?.code || ""} ready={true} />
                     </div>
                 ))
             }

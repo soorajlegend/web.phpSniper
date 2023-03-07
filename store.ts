@@ -184,6 +184,8 @@ $conn->close();
 `;
 
 export const updateWithPhpSniper = `
+<?php
+
 include "./sniper.php";
 
 $table = 'mytable';
@@ -195,6 +197,8 @@ if(updateRow($table, $data, 'id='. $id)) {
 } else {
   echo "Error updating record";
 }
+
+?>
 `;
 
 export const deleteWithoutPhpSniper = `
@@ -295,41 +299,113 @@ export const functions = [
         `,
         "examples": [
             {
-                "title": "Insert data with in a table",
-                "description": "to insert data in to a table, all you need is the table name, the columns name and data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
-                "code": `
-                <?php
-                $inserted = insert("users", "name, email, password", "'Muhammad','muhammad@test.com','12345'");
-                
-                // to check if the data was successfully inserted then check if the inserted variable is true
-
-                if($inserted === true) {
-                    echo "data was successfully inserted";
-                }else{
-                    echo "data was not successfully inserted";
-                }
-
-                ?>`
+                "title": "Select data with out any condition",
+                "description": "to fetch all the table data, all you need is to pass the table name. see the example below for more information",
+                "code": selectWithPhpSniper
             },
             {
-                "title": "Insert data with in a table in an optimized conditional mode",
-                "description": "To insert data in to a table, in an optimzed way is to check directily if insert function returns true",
+                "title": "Select data with some conditions",
+                "description": "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
+                "code": `
+<?php
+include "./sniper.php";
+
+// Select all data from the table
+$data = selectAll("users", "name = 'Ibrahim' AND city = 'Kano'");
+
+// Check if any rows were returned
+if ($data) {
+    // Output data of each row
+    foreach($data as $row) {
+        echo "Name: " . $row["name"]. " - Email: " . $row["email"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+?>
+`
+            }
+
+        ]
+    },
+    {
+        "title": "Upadate row",
+        "description": `the simples way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
+    
+        <li>1st parameter: the name of the database table</li>
+        <li>2nd parameter: The columns and their new values </li>
+        <li>3rd parameter: the condition, the function will update all rows that matches the condition</li>
+        <br />
+        see the following example for more information:
+        `,
+        "examples": [
+            {
+                "title": "Updating a row with a new data",
+                "description": "Here we're going to use update() function to update some rows with new data",
+                "code": updateWithPhpSniper
+            },
+            {
+                "title": "Updating multiple columns with a new data",
+                "description": "To update multiple columns with a new data, all you need to do is list the columns with their values with a comma separated. <br />See the example below for more information",
+                "code": `
+<?php
+include "./sniper.php";
+
+// define the columns and their values with a comma separated
+
+$columnsAndValues = "name = 'Ibrahim', city = 'Kano'";
+
+$updated = updateRow("users", $columnsAndValues, "id = 1");
+
+// Check if any row was affected by the update
+if ($update) {
+   echo "The data was successfully updated";
+} else {
+    echo "Unable to update the data";
+}
+
+?>
+`
+            }
+
+        ]
+    },
+    {
+        "title": "Delete data",
+        "description": `To delete a data from recod, delete function can highly help you as you don't need to travel to next level of writing any SQL syntax, all you need to do is to provide the information about the specific data you wanted to delete, check the parameters below:<br /> 
+    
+        <li>1st parameter: the name of the table you wanted to delete a data </li>
+        <li>2nd parameter: the condition, to help the function find the exact data you wanted to delete</li>
+
+        Here are some examples to describe how you can use the function to delete a data
+       
+        `,
+        "examples": [
+            {
+                "title": "Delete all data",
+                "description": "Here is an example to delete all records from a table, by passing the name of the table and 1 as the second parameter",
                 "code": `
                 <?php
+                include "./sniper.php";
                 
-                // all you have to do is to check if the insert function return true if the data was successfully inserted
-
-                if(insert("users", "name, email, password", "'Muhammad','muhammad@test.com','12345'")) {
-
-                    echo "data was successfully inserted";
-
-                }else{
-
-                    echo "data was not successfully inserted";
-
+                // DELETE all data from the table
+                $deleted = delete("records", 1);
+                
+                // Check if any rows were affected by the delete function
+                if ($deleted) {
+                    echo "Records were deleted successfully";                    
+                } else {
+                    echo "Unable to delete all records";
                 }
-
-                ?>`
+                
+                ?>
+                `
+            },
+            {
+                "title": "Select data with some conditions",
+                "description": "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
+                "code": deleteWithPhpSniper 
             }
 
         ]

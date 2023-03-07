@@ -7,9 +7,10 @@ import { CheckBadgeIcon, Square2StackIcon } from '@heroicons/react/24/outline'
 
 type Props = {
     code: string
+    ready?: boolean
 }
 
-const Snippet = ({ code }: Props) => {
+const Snippet = ({ code, ready}: Props) => {
     const [copySuccess, setCopySuccess] = useState(false);
 
     const [text, count] = useTypewriter({
@@ -46,7 +47,7 @@ const Snippet = ({ code }: Props) => {
                                 }
                             </div>
             <SyntaxHighlighter showInlineLineNumbers language="php" style={vscDarkPlus}>
-                {text}
+                {ready ? code : text}
             </SyntaxHighlighter>
         </div>
     )
