@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white dark:bg-gray-900 w-full bottom-0">
     <div className="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
         <a href="#">
             <Image className="w-auto h-20" src="/phpSniper.png" width={100} height={100} priority alt="footer logo" />
