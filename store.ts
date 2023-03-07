@@ -9,6 +9,18 @@ export const navigations = [
     {name: "Github", url: "https://github.com/phpSniper/php-sniper.git"},
 ]
 
+
+export const ourFeatures = [
+    {title: "Simple and efficient database interactions", description: "PHP Sniper provides an easy-to-use interface for common database interactions such as selecting, inserting, updating, and deleting data."},
+    {title: "Flexibility", description: "PHP Sniper can be used with a variety of different databases and can be easily integrated into existing projects."},
+    {title: "Time-saving", description: "Using PHP Sniper can save developers time by simplifying the process of working with databases, allowing them to focus on other aspects of their project."},
+    {title: "Readability", description: "The library's clean, well-documented code makes it easy to understand and use, even for developers with limited experience working with databases."},
+    {title: "Support", description: "PHP Sniper is supported by its author and the wider community, with regular updates and bug fixes."},
+    {title: "Free and open-source", description: "PHP Sniper is available for free under an open-source license, making it accessible to developers of all skill levels and project types."},
+];
+
+
+
 export const insertWithOutPhpSniper = `
 <?php
     $servername = "localhost";
