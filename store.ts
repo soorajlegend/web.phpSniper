@@ -740,4 +740,69 @@ if ($update) {
       },
     ],
   },
+  {
+    title: "Next event",
+    description: `The <b>getNextEvent()</b> function in PHP Sniper is used to get the next event in an array of events based on the date and time columns provided. It returns the next event as an associative array, or null if there is no next event.<br />Check the parameters below:<br /> 
+    
+        <li>1st parameter: an array of events</li>
+        <li>2nd parameter: the name of the column containing the event dates</li>
+        <li>3rd parameter: an optional column for event times</li>
+<br />
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+      {
+        title: "Getting the next event based on date only",
+        description:
+          "To use the function to get the next event based on date tag only, see the following example",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                $events = [
+                    ["name" => "Event 1", "date" => "2023-03-15"],
+                    ["name" => "Event 2", "date" => "2023-03-20"],
+                    ["name" => "Event 3", "date" => "2023-03-10"],
+                ];
+                
+                $nextEvent = getNextEvent($events, "date");
+                
+                echo "The next event is: " . $nextEvent["name"] . " on " . $nextEvent["date"];
+                
+
+                // OUTPUT DATA
+                / The next event is: Event 1 on 2023-03-15
+
+
+                ?>
+                `,
+      },
+      {
+        title: "Getting the next event based on date and time",
+        description:
+          "T fetch the next event based on date and time using the same function is to add the third optional parameter, see the following example",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                $events = [
+                    ["name" => "Event 1", "date" => "2023-03-15", "time" => "13:00:00"],
+                    ["name" => "Event 2", "date" => "2023-03-20", "time" => "15:30:00"],
+                    ["name" => "Event 3", "date" => "2023-03-10", "time" => "10:00:00"],
+                ];
+                
+                $nextEvent = getNextEvent($events, "date", "time");
+                
+                echo "The next event is: " . $nextEvent["name"] . " on " . $nextEvent["date"] . " at " . $nextEvent["time"];
+                
+                // OUTPUT DATA
+                //  The next event is: Event 3 on 2023-03-10 at 10:00:00
+
+
+                ?>
+                `,
+      },
+    ],
+  },
 ];
