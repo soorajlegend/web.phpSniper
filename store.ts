@@ -923,4 +923,51 @@ if ($update) {
       },
     ],
   },
+  {
+    title: "Currency format",
+    description: `The function <b>currencyFormat()</b> function is used to format a number as currency, with an optional number of decimal places and a currency symbol.Finally, the function adds the currency symbol to the formatted number and returns the resulting string.<br />Check the parameters below:<br /> 
+    
+        <li>1st parameter: the number to be formatted as currency</li>
+        <li>2nd parameter: (optional): the number of decimal places to include in the formatted number. Defaults to 0 if not provided</li>
+        <li>3rd parameter: (optional): the currency symbol to use. Defaults to an empty string if not provided.</li>
+<br />
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+        {
+            title: "Format a number as NGN with no decimal places.",
+            description:
+            "The following function will return the formatted amount with no decimal starting with euros symbol",
+            code: `
+            <?php
+            include "./sniper.php";
+            
+            $price = 10.50;
+            $formatted_price = currencyFormat($price, 0, 'NGN');
+            
+            echo $formatted_price; // Output: "NGN10"
+            
+            
+            ?>
+            `,
+        },
+        {
+          title: "Format a number as dollars with two decimal places",
+          description:
+            "The following function will return the formatted amount with two decimal places starting with dallar symbol",
+          code: `
+                  <?php
+                  include "./sniper.php";
+    
+                  $price = 15.99;
+                  $formatted_price = currencyFormat($price, 2, '$');
+    
+                  echo $formatted_price; // Output: "$15.99"
+    
+                  ?>
+                  `,
+        },
+    ],
+  },
 ];
