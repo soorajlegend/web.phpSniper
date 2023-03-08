@@ -17,7 +17,7 @@ const Nav = ({ show, setShow }: Props) => {
 
   return (
     <div className='glass flex justify-between px-5 py-2 fixed w-full top-0 z-50'>
-      <div className="md:max-w-5xl mx-auto flex w-full justify-between  space-x-20  items-center">
+      <div className="md:max-w-5xl lg:max-w-7xl mx-auto flex w-full justify-between  space-x-20 lg:space-x-40  items-center">
         <Image src="/phpSniper.png" priority width={100} height={100} className='w-16 relative z-50' alt='logo'  />
 
         <div className='md:w-full flex flex-col md:flex-row w-fulljustify-between text-gray-800 dark:text-gray-200'>
