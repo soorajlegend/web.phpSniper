@@ -474,4 +474,49 @@ if ($update) {
 
         ]
     },
+    {
+        "title": "count rows",
+        "description": `in a situations that you wanted to find the number of a particular function base on a particular condition or even with out any condition, then we recomment using <b>countRows(), this function return the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
+    
+        <li>1st parameter: the name of the table you wanted to check the data </li>
+        <li>2nd parameter: the condition (optional), to help the function count the only data you want</li>
+
+        Here are some examples to describe how you can use the function
+       
+        `,
+        "examples": [
+            {
+                "title": "count all users",
+                "description": "Here is an example on how to count all the users in the users table without any condition:",
+                "code": `
+                <?php
+                include "./sniper.php";
+                
+                //count all users in the users table
+                $allUsers = countRows("users");
+
+                echo $allUsers;
+                
+                ?>
+                `
+            },
+            {
+                "title": "Check the existance of data based on multiple columns",
+                "description": "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+                "code": `
+                <?php
+                include "./sniper.php";
+                
+                // find the number of male users in the users table
+                $male_users = countRows("users", "gender = 'male'");
+                
+                // lets display the result
+                echo $male_users;
+                
+                ?>
+                `
+            }
+
+        ]
+    },
 ]
