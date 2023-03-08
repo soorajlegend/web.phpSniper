@@ -1,25 +1,45 @@
-
 export const navigations = [
-    {name: "Overview", url: "/"},
-    // {name: "about us", url: "/about"},
-    {name: "features", url: "/features"},
-    {name: "docs", url: "/docs"},
-    // {name: "blogs", url: "/blogs"},
-    {name: "supports", url: "/supports"},
-    {name: "Github", url: "https://github.com/phpSniper/php-sniper.git"},
-]
-
-
-export const ourFeatures = [
-    {title: "Simple and efficient database interactions", description: "PHP Sniper provides an easy-to-use interface for common database interactions such as selecting, inserting, updating, and deleting data."},
-    {title: "Flexibility", description: "PHP Sniper can be used with a variety of different databases and can be easily integrated into existing projects."},
-    {title: "Time-saving", description: "Using PHP Sniper can save developers time by simplifying the process of working with databases, allowing them to focus on other aspects of their project."},
-    {title: "Readability", description: "The library's clean, well-documented code makes it easy to understand and use, even for developers with limited experience working with databases."},
-    {title: "Support", description: "PHP Sniper is supported by its author and the wider community, with regular updates and bug fixes."},
-    {title: "Free and open-source", description: "PHP Sniper is available for free under an open-source license, making it accessible to developers of all skill levels and project types."},
+  { name: "Overview", url: "/" },
+  // {name: "about us", url: "/about"},
+  { name: "features", url: "/features" },
+  { name: "docs", url: "/docs" },
+  // {name: "blogs", url: "/blogs"},
+  { name: "supports", url: "/supports" },
+  { name: "Github", url: "https://github.com/phpSniper/php-sniper.git" },
 ];
 
-
+export const ourFeatures = [
+  {
+    title: "Simple and efficient database interactions",
+    description:
+      "PHP Sniper provides an easy-to-use interface for common database interactions such as selecting, inserting, updating, and deleting data.",
+  },
+  {
+    title: "Flexibility",
+    description:
+      "PHP Sniper can be used with a variety of different databases and can be easily integrated into existing projects.",
+  },
+  {
+    title: "Time-saving",
+    description:
+      "Using PHP Sniper can save developers time by simplifying the process of working with databases, allowing them to focus on other aspects of their project.",
+  },
+  {
+    title: "Readability",
+    description:
+      "The library's clean, well-documented code makes it easy to understand and use, even for developers with limited experience working with databases.",
+  },
+  {
+    title: "Support",
+    description:
+      "PHP Sniper is supported by its author and the wider community, with regular updates and bug fixes.",
+  },
+  {
+    title: "Free and open-source",
+    description:
+      "PHP Sniper is available for free under an open-source license, making it accessible to developers of all skill levels and project types.",
+  },
+];
 
 export const insertWithOutPhpSniper = `
 <?php
@@ -52,8 +72,6 @@ export const insertWithOutPhpSniper = `
     $conn->close();
 ?>
 `;
-
-
 
 export const insertWithPhpSniper = `
 <?php
@@ -240,11 +258,10 @@ mysqli_close($conn);
 ?>
 `;
 
-
 export const functions = [
-    {
-        "title": "insert data",
-        "description": `<p>
+  {
+    title: "insert data",
+    description: `<p>
         The advanced way to insert a data in a table with a php sniper library, after you configureyour database connection and include sniper.php in you php script 
         </p>
         
@@ -254,11 +271,12 @@ export const functions = [
         
         check the examples below for more information:
         `,
-        "examples": [
-            {
-                "title": "insert data with in a table",
-                "description": "to insert data in to a table, all you need is the table name, the columns name and data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
-                "code": `
+    examples: [
+      {
+        title: "insert data with in a table",
+        description:
+          "to insert data in to a table, all you need is the table name, the columns name and data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
+        code: `
                 <?php
                 $inserted = insert("users", "name, email, password", "'name_here','example@example.com','12345'");
                 
@@ -270,12 +288,13 @@ export const functions = [
                     echo "data was not successfully inserted";
                 }
 
-                ?>`
-            },
-            {
-                "title": "insert data with in a table in an optimized conditional mode",
-                "description": "To insert data in to a table, in an optimzed way is to check directily if insert function returns true",
-                "code": `
+                ?>`,
+      },
+      {
+        title: "insert data with in a table in an optimized conditional mode",
+        description:
+          "To insert data in to a table, in an optimzed way is to check directily if insert function returns true",
+        code: `
                 <?php
                 
                 // all you have to do is to check if the insert function return true if the data was successfully inserted
@@ -290,14 +309,13 @@ export const functions = [
 
                 }
 
-                ?>`
-            }
-
-        ]
-    },
-    {
-        "title": "Select All data",
-        "description": `The simplest way to select all data from a table weither with condition or not is using fetch selectAll() function, here is the avaiable parameters that will help you select all the data you need from a table <br /> 
+                ?>`,
+      },
+    ],
+  },
+  {
+    title: "Select All data",
+    description: `The simplest way to select all data from a table weither with condition or not is using fetch selectAll() function, here is the avaiable parameters that will help you select all the data you need from a table <br /> 
     
         <li>1st parameter: the name of the  table</li>
         <li>2nd parameter: the condition (optional), the function will return all if it's null</li>
@@ -306,16 +324,18 @@ export const functions = [
         <li>5th parameter: DISTINCT if you wanted to select distinct data from a table the tun it true otherwise it's false</li>
        
         `,
-        "examples": [
-            {
-                "title": "Select data with out any condition",
-                "description": "to fetch all the table data, all you need is to pass the table name. see the example below for more information",
-                "code": selectWithPhpSniper
-            },
-            {
-                "title": "Select data with some conditions",
-                "description": "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
-                "code": `
+    examples: [
+      {
+        title: "Select data with out any condition",
+        description:
+          "to fetch all the table data, all you need is to pass the table name. see the example below for more information",
+        code: selectWithPhpSniper,
+      },
+      {
+        title: "Select data with some conditions",
+        description:
+          "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
+        code: `
 <?php
 include "./sniper.php";
 
@@ -333,14 +353,13 @@ if ($data) {
 }
 
 ?>
-`
-            }
-
-        ]
-    },
-    {
-        "title": "Upadate row",
-        "description": `the simples way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
+`,
+      },
+    ],
+  },
+  {
+    title: "Upadate row",
+    description: `the simples way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
     
         <li>1st parameter: the name of the table</li>
         <li>2nd parameter: The columns and their new values </li>
@@ -348,16 +367,18 @@ if ($data) {
         <br />
         see the following example for more information:
         `,
-        "examples": [
-            {
-                "title": "Updating a row with a new data",
-                "description": "Here we're going to use update() function to update some rows with new data",
-                "code": updateWithPhpSniper
-            },
-            {
-                "title": "Updating multiple columns with a new data",
-                "description": "To update multiple columns with a new data, all you need to do is list the columns with their values with a comma separated. <br />See the example below for more information",
-                "code": `
+    examples: [
+      {
+        title: "Updating a row with a new data",
+        description:
+          "Here we're going to use update() function to update some rows with new data",
+        code: updateWithPhpSniper,
+      },
+      {
+        title: "Updating multiple columns with a new data",
+        description:
+          "To update multiple columns with a new data, all you need to do is list the columns with their values with a comma separated. <br />See the example below for more information",
+        code: `
 <?php
 include "./sniper.php";
 
@@ -375,14 +396,13 @@ if ($update) {
 }
 
 ?>
-`
-            }
-
-        ]
-    },
-    {
-        "title": "Delete data",
-        "description": `To delete a data from records, delete function can highly help you as you don't need to travel to next level of writing any SQL syntax, all you need to do is to provide the information about the specific data you wanted to delete, check the parameters below:<br /> 
+`,
+      },
+    ],
+  },
+  {
+    title: "Delete data",
+    description: `To delete a data from records, delete function can highly help you as you don't need to travel to next level of writing any SQL syntax, all you need to do is to provide the information about the specific data you wanted to delete, check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to delete a data </li>
         <li>2nd parameter: the condition, to help the function find the exact data you wanted to delete</li>
@@ -390,11 +410,12 @@ if ($update) {
         Here are some examples to describe how you can use the function to delete a data
        
         `,
-        "examples": [
-            {
-                "title": "Delete all data",
-                "description": "Here is an example to delete all records from a table, by passing the name of the table and 1 as the second parameter",
-                "code": `
+    examples: [
+      {
+        title: "Delete all data",
+        description:
+          "Here is an example to delete all records from a table, by passing the name of the table and 1 as the second parameter",
+        code: `
                 <?php
                 include "./sniper.php";
                 
@@ -409,19 +430,19 @@ if ($update) {
                 }
                 
                 ?>
-                `
-            },
-            {
-                "title": "Select data with some conditions",
-                "description": "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
-                "code": deleteWithPhpSniper 
-            }
-
-        ]
-    },
-    {
-        "title": "Check existance",
-        "description": `In a situation where by you wanted to check if particular data exist in a table, all you need to do is to use <b>rowExists()</b>
+                `,
+      },
+      {
+        title: "Select data with some conditions",
+        description:
+          "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
+        code: deleteWithPhpSniper,
+      },
+    ],
+  },
+  {
+    title: "Check existance",
+    description: `In a situation where by you wanted to check if particular data exist in a table, all you need to do is to use <b>rowExists()</b>
         that'll return true if the data is found based on the condition provided otherwise false.  check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to check the data </li>
@@ -430,11 +451,12 @@ if ($update) {
         Here are some examples to describe how you can use the function to comfirm a data
        
         `,
-        "examples": [
-            {
-                "title": "Check a single column",
-                "description": "Here is an example on how to check a data existance based on single column, and we'll use email column in thwe user table as an example.",
-                "code": `
+    examples: [
+      {
+        title: "Check a single column",
+        description:
+          "Here is an example on how to check a data existance based on single column, and we'll use email column in thwe user table as an example.",
+        code: `
                 <?php
                 include "./sniper.php";
                 
@@ -449,12 +471,13 @@ if ($update) {
                 }
                 
                 ?>
-                `
-            },
-            {
-                "title": "Check the existance of data based on multiple columns",
-                "description": "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
-                "code": `
+                `,
+      },
+      {
+        title: "Check the existance of data based on multiple columns",
+        description:
+          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+        code: `
                 <?php
                 include "./sniper.php";
                 
@@ -469,14 +492,13 @@ if ($update) {
                 }
                 
                 ?>
-                `
-            }
-
-        ]
-    },
-    {
-        "title": "count rows",
-        "description": `in a situations that you wanted to find the number of a particular function base on a particular condition or even with out any condition, then we recomment using <b>countRows(), this function return the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
+                `,
+      },
+    ],
+  },
+  {
+    title: "count rows",
+    description: `in a situations that you wanted to find the number of a particular function base on a particular condition or even with out any condition, then we recomment using <b>countRows(), this function return the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to check the data </li>
         <li>2nd parameter: the condition (optional), to help the function count the only data you want</li>
@@ -484,11 +506,12 @@ if ($update) {
         Here are some examples to describe how you can use the function
        
         `,
-        "examples": [
-            {
-                "title": "count all users",
-                "description": "Here is an example on how to count all the users in the users table without any condition:",
-                "code": `
+    examples: [
+      {
+        title: "count all users",
+        description:
+          "Here is an example on how to count all the users in the users table without any condition:",
+        code: `
                 <?php
                 include "./sniper.php";
                 
@@ -498,12 +521,13 @@ if ($update) {
                 echo $allUsers;
                 
                 ?>
-                `
-            },
-            {
-                "title": "Check the existance of data based on multiple columns",
-                "description": "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
-                "code": `
+                `,
+      },
+      {
+        title: "Check the existance of data based on multiple columns",
+        description:
+          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+        code: `
                 <?php
                 include "./sniper.php";
                 
@@ -514,9 +538,206 @@ if ($update) {
                 echo $male_users;
                 
                 ?>
-                `
-            }
+                `,
+      },
+    ],
+  },
+  {
+    title: "Days between dates",
+    description: `To find the number of days between 2 dates all you need to do is to pass the first and last dates as a parameters of the <b>getDaysBetweenDates()</b>  check the parameters below:<br /> 
+    
+        <li>1st parameter: first date </li>
+        <li>2nd parameter: second date</li>
 
-        ]
-    },
-]
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+      {
+        title: "Get the number of days between today and a future date",
+        description:
+          "Here is an example on how to count the number of days between 2 dates:",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                $startDate = '2022-01-01';
+                $endDate = '2022-01-15';
+                
+                // Get the number of days between the two dates
+                $days = getDaysBetweenDates($startDate, $endDate);
+                
+                echo "There are " . $days . " days between " . $startDate . " and " . $endDate;
+
+                // OUTPUT DATA
+                // There are 14 days between 2022-01-01 and 2022-01-15
+
+                ?>
+                `,
+      },
+      {
+        title: "Check the existance of data based on multiple columns",
+        description:
+          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                // Get the number of days between today and a future date
+                $futureDate = '2023-05-01';
+
+                $days = getDaysBetweenDates(date('Y-m-d'), $futureDate);
+
+                echo "There are " . $days . " days until " . $futureDate;
+                
+                // OUTPUT DATA as of today 7th march, 2023
+                // There are 428 days until 2023-05-01
+                
+                ?>
+                `,
+      },
+    ],
+  },
+  {
+    title: "Upcoming events",
+    description: `To filter the expired event based on date comparison, we recommend using <b>filterUpcomingEvents(). it accept a wide range of data and filtter out all the events that are expired by checking and comparing the current date and the event's date</b>  check the parameters below:<br /> 
+    
+        <li>1st parameter: all the events in form of array</li>
+        <li>2nd parameter: the date column name</li>
+
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+      {
+        title: "Get the number of days between today and a future date",
+        description:
+          "Here is an example on how to finf only the upcoming events:",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                // Assuming that we have an array of events
+                $events = [
+                    [
+                        'id' => 1,
+                        'title' => 'Event 1',
+                        'date' => '2023-03-10 15:00:00'
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Event 2',
+                        'date' => '2023-03-12 10:00:00'
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Event 3',
+                        'date' => '2023-03-15 18:30:00'
+                    ],
+                ];
+
+                // Filter upcoming events
+                $upcomingEvents = filterUpcomingEvents($events, 'date');
+
+                // Print the result
+                if ($upcomingEvents !== 0) {
+                    foreach ($upcomingEvents as $event) {
+                        echo "Upcoming Event: {$event['title']}, Date: {$event['date']}";
+                    }
+                } else {
+                    echo "No upcoming events found.";
+                }
+
+                ?>
+                `,
+      },
+      {
+        title: "Fteching and filtering events",
+        description:
+          "Here is an example on how to fetch events example appointments, competitions and other events. And also filter them by their dates ",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                // Assuming that we have a table named "appointments"
+                // with columns "id", "title", "date"
+
+                // Select all appointments from the table using selectAll()
+                $appointments = selectAll("appointments");
+
+                // Filter upcoming appointments
+                $upcomingAppointments = filterUpcomingEvents($appointments, 'date');
+
+                // Print the result
+                if ($upcomingAppointments !== 0) {
+                    foreach ($upcomingAppointments as $event) {
+                        echo "Upcoming Event: {$event['title']}, Date: {$event['date']}";
+                    }
+                } else {
+                    echo "No upcoming appointment found.";
+                }
+
+                ?>
+                `,
+      },
+    ],
+  },
+  {
+    title: "Todays events",
+    description: `The <b>\`getTodayItems()\`</b> function takes in an array of data and a string indicating the name of the column that contains date values. It then loops through each item in the data array and checks if the date in the specified column matches today's date. The function returns an array that includes the todaysItems array as well as the number of items that were added to it. In essence, the function is used to filter an array of items to only include those that have a date value matching the current day. <br />Check the parameters below:<br /> 
+    
+        <li>1st parameter: all the events in form of array</li>
+        <li>2nd parameter: the name of the column that contain the date value</li>
+
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+      {
+        title: "Fetching and filtering events to get todays events only",
+        description:
+          "Suppose you have a table named `tasks` with columns id, title, and due_date, and you want to get all tasks due today",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                // First, fetch all tasks from the database
+                $today_tasks = getTodayItems(selectAll("tasks"), "due_date");
+
+                // Finally, loop through the result and display the task titles
+                foreach ($today_tasks['data'] as $task) {
+                    echo $task['title'] . "<br>";
+                }
+
+
+                ?>
+                `,
+      },
+      {
+        title: "Filtering an array of events to get todays events only",
+        description:
+          "Suppose you have an array of events with event_date as the date column, and you want to filter the events that are happening today:",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                $events = array(
+                    array("event_id" => 1, "event_name" => "Conference", "event_date" => "2023-03-06"),
+                    array("event_id" => 2, "event_name" => "Concert", "event_date" => "2023-03-05"),
+                    array("event_id" => 3, "event_name" => "Exhibition", "event_date" => "2023-03-07"),
+                );
+                
+                // Pass the events array and the name of the date column to the function
+                $today_events = getTodayItems($events, "event_date");
+                
+                // Loop through the result and display the event names
+                foreach ($today_events['data'] as $event) {
+                    echo $event['event_name'] . "<br>";
+                }
+
+                ?>
+                `,
+      },
+    ],
+  },
+];
