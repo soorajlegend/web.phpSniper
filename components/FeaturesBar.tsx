@@ -17,7 +17,8 @@ type Props = {
 }
 
 const FeaturesBar = ({setDetails, data} : Props) => {
-const handleChange = (value: {}) => {
+
+  const handleChange = (value: {}) => {
     setDetails(value);
     localStorage.setItem('current', JSON.stringify(value));
 };

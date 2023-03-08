@@ -3,7 +3,7 @@ import FeaturesBar from '../../components/FeaturesBar'
 import DocsDetails from '../../components/DocsDetails';
 import { strict } from 'assert';
 
-const docs = () => {
+const Docs = () => {
 
     const [details, setDetails] = useState({})
 
@@ -31,4 +31,4 @@ const docs = () => {
     )
 }
 
-export default docs
+export default Docs
