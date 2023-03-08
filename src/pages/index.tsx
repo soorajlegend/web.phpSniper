@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/phpSniper.png" />
       </Head>
-      <main className="flex flex-col md:max-w-5xl lg:max-w-7xl mx-auto">
+      <main className="flex flex-col ">
        <Hero />
        <Introduction />
       </main>
