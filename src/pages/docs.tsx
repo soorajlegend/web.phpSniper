@@ -7,18 +7,19 @@ const Docs = () => {
 
     const [details, setDetails] = useState({})
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const current = localStorage.getItem('current');
-            if (current === "{}") {
-                setDetails({ "title": "getStarted" });
-            } else {
-                setDetails(JSON.parse(current || ""));
-            }
-            return;
+ 
+useEffect(() => {
+    if (typeof window !== 'undefined') {
+        const current = localStorage.getItem('current');
+        try {
+            const parsedData = JSON.parse(current || "{}");
+            setDetails(parsedData);
+        } catch (error) {
+            // console.log(error);
+            setDetails({ "title": "getStarted" });
         }
-
-    }, [])
+    }
+}, []);
 
 
     return (
