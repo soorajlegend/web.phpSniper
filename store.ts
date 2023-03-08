@@ -781,7 +781,7 @@ if ($update) {
       {
         title: "Getting the next event based on date and time",
         description:
-          "T fetch the next event based on date and time using the same function is to add the third optional parameter, see the following example",
+          "To fetch the next event based on date and time using the same function is to add the third optional parameter, see the following example",
         code: `
                 <?php
                 include "./sniper.php";
@@ -798,6 +798,124 @@ if ($update) {
                 
                 // OUTPUT DATA
                 //  The next event is: Event 3 on 2023-03-10 at 10:00:00
+
+
+                ?>
+                `,
+      },
+    ],
+  },
+  {
+    title: "Expired events",
+    description: `The <b>getExpiredEvents()</b> function is used to filter and return an array of events from a larger array of events based on a given date column. Specifically, the function filters and returns an array of events whose date in the specified column is past compared with the current time.<br />Check the parameters below:<br /> 
+    
+        <li>1st parameter: an array of events</li>
+        <li>2nd parameter: the name of the column containing the event dates</li>
+<br />
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+      {
+        title: "Filtering the expired events from an array",
+        description:
+          "To use the function to get the next event based on date tag only, see the following example",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                // sample array of events
+                $events = [
+                    ["title" => "Event 1", "date" => "2022-01-01"],
+                    ["title" => "Event 2", "date" => "2022-02-01"],
+                    ["title" => "Event 3", "date" => "2022-03-01"],
+                    ["title" => "Event 4", "date" => "2023-03-01"]
+                ];
+
+                // call the function to get expired events
+                $expiredEvents = getExpiredEvents($events, "date");
+
+                // output the results
+                if ($expiredEvents === 0) {
+                    echo "No expired events found";
+                } else {
+                    foreach ($expiredEvents as $event) {
+                        echo "{$event['title']} has expired";
+                    }
+                }
+
+
+                ?>
+                `,
+      },
+      {
+        title: "Getting the expired events from database",
+        description:
+          "Suppose you have a table named `appointments` with columns id, title, and due_date, and you want to get all the expired appointments. See the following example",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                $events = SelectAll("appointments");
+                
+                $expiredEvents = getExpiredEvents($events, "due_date");
+                
+                // output the results
+                if ($expiredEvents === 0) {
+                    echo "No expired events found";
+                } else {
+                    foreach ($expiredEvents as $event) {
+                        echo "{$event['title']} has expired";
+                    }
+                }
+
+                ?>
+                `,
+      },
+    ],
+  },
+  {
+    title: "Search characters",
+    description: `The function <b>search()</b> takes in two parameters: $data and $query. It returns true if $data contains all the characters in $query and false otherwise.<br />Check the parameters below:<br /> 
+    
+        <li>1st parameter: The string to search within.</li>
+        <li>2nd parameter: The query string to search for</li>
+<br />
+        Here are some examples to describe how you can use the function
+       
+        `,
+    examples: [
+      {
+        title: "Filtering the expired events from an array",
+        description:
+          "In the following example, $data contains all the characters in $query (i, s, and p) so the function returns true. See the following example",
+        code: `
+                <?php
+                include "./sniper.php";
+
+                $data = "This is a sample text.";
+                $query = "isp";
+                $result = search($data, $query);
+
+                echo $result; // Output: true
+
+                ?>
+                `,
+      },
+      {
+        title: "Getting the expired events from database",
+        description:
+          "In the following example, none of the characters in $query are present in $data, so the function returns false. See the example",
+        code: `
+                <?php
+                include "./sniper.php";
+                
+                $data = "Hello world!";
+
+                $query = "abc";
+                $result = search($data, $query);
+
+                echo $result; // Output: false
 
 
                 ?>
