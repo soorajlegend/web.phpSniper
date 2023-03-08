@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FeaturesBar from '../../components/FeaturesBar'
+"use client"
 import DocsDetails from '../../components/DocsDetails';
-import { strict } from 'assert';
 
 const Docs = () => {
 
