@@ -244,14 +244,23 @@ mysqli_close($conn);
 export const functions = [
     {
         "title": "insert data",
-        "description": "The advanced way to insert a data in a table with a php sniper library, after you configureyour database connection and include sniper.php in you php script",
+        "description": `<p>
+        The advanced way to insert a data in a table with a php sniper library, after you configureyour database connection and include sniper.php in you php script 
+        </p>
+        
+        <li>1st parameter: the name of the table</li>
+        <li>2nd parameter: the columns you wanted to insert data</li>
+        <li>3rd parameter: the values of the columns passed as the second parameter respectively</li>
+        
+        check the examples below for more information:
+        `,
         "examples": [
             {
                 "title": "insert data with in a table",
                 "description": "to insert data in to a table, all you need is the table name, the columns name and data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
                 "code": `
                 <?php
-                $inserted = insert("users", "name, email, password", "'Muhammad','muhammad@test.com','12345'");
+                $inserted = insert("users", "name, email, password", "'name_here','example@example.com','12345'");
                 
                 // to check if the data was successfully inserted then check if the inserted variable is true
 
@@ -271,7 +280,7 @@ export const functions = [
                 
                 // all you have to do is to check if the insert function return true if the data was successfully inserted
 
-                if(insert("users", "name, email, password", "'Muhammad','muhammad@test.com','12345'")) {
+                if(insert("users", "name, email, password", "'name_here','example@example.com','12345'")) {
 
                     echo "data was successfully inserted";
 
@@ -290,7 +299,7 @@ export const functions = [
         "title": "Select All data",
         "description": `The simplest way to select all data from a table weither with condition or not is using fetch selectAll() function, here is the avaiable parameters that will help you select all the data you need from a table <br /> 
     
-        <li>1st parameter: the name of the database table</li>
+        <li>1st parameter: the name of the  table</li>
         <li>2nd parameter: the condition (optional), the function will return all if it's null</li>
         <li>3rd parameter: the order_by (optional), the method at which you wanted to fetch the data from database, its null by default  </li>
         <li>4th parameter: the columns you wanted to select(optional), the function will return all columns if it's null</li>
@@ -311,7 +320,7 @@ export const functions = [
 include "./sniper.php";
 
 // Select all data from the table
-$data = selectAll("users", "name = 'Ibrahim' AND city = 'Kano'");
+$data = selectAll("users", "name = 'user_name' AND city = 'user_city'");
 
 // Check if any rows were returned
 if ($data) {
@@ -333,7 +342,7 @@ if ($data) {
         "title": "Upadate row",
         "description": `the simples way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
     
-        <li>1st parameter: the name of the database table</li>
+        <li>1st parameter: the name of the table</li>
         <li>2nd parameter: The columns and their new values </li>
         <li>3rd parameter: the condition, the function will update all rows that matches the condition</li>
         <br />
@@ -354,7 +363,7 @@ include "./sniper.php";
 
 // define the columns and their values with a comma separated
 
-$columnsAndValues = "name = 'Ibrahim', city = 'Kano'";
+$columnsAndValues = "name = 'user_name', city = 'user_city'";
 
 $updated = updateRow("users", $columnsAndValues, "id = 1");
 
@@ -373,7 +382,7 @@ if ($update) {
     },
     {
         "title": "Delete data",
-        "description": `To delete a data from recod, delete function can highly help you as you don't need to travel to next level of writing any SQL syntax, all you need to do is to provide the information about the specific data you wanted to delete, check the parameters below:<br /> 
+        "description": `To delete a data from records, delete function can highly help you as you don't need to travel to next level of writing any SQL syntax, all you need to do is to provide the information about the specific data you wanted to delete, check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to delete a data </li>
         <li>2nd parameter: the condition, to help the function find the exact data you wanted to delete</li>
@@ -406,6 +415,61 @@ if ($update) {
                 "title": "Select data with some conditions",
                 "description": "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
                 "code": deleteWithPhpSniper 
+            }
+
+        ]
+    },
+    {
+        "title": "Check existance",
+        "description": `In a situation where by you wanted to check if particular data exist in a table, all you need to do is to use <b>rowExists()</b>
+        that'll return true if the data is found based on the condition provided otherwise false.  check the parameters below:<br /> 
+    
+        <li>1st parameter: the name of the table you wanted to check the data </li>
+        <li>2nd parameter: the condition, to help the function find the exact data you want to verify</li>
+
+        Here are some examples to describe how you can use the function to comfirm a data
+       
+        `,
+        "examples": [
+            {
+                "title": "Check a single column",
+                "description": "Here is an example on how to check a data existance based on single column, and we'll use email column in thwe user table as an example.",
+                "code": `
+                <?php
+                include "./sniper.php";
+                
+                //check the existance
+                $existance = rowExists("users", "email = 'example@example.com'");
+                
+                // Check if any row matches the condition
+                if ($existance) {
+                    echo "This data exists in the table";                    
+                } else {
+                    echo "This data does not exist in the table";
+                }
+                
+                ?>
+                `
+            },
+            {
+                "title": "Check the existance of data based on multiple columns",
+                "description": "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+                "code": `
+                <?php
+                include "./sniper.php";
+                
+                //check the existance
+                $existance = rowExists("users", "email = 'example@example.com' AND password = 'abcd123456'");
+                
+                // Check if any row matches the condition
+                if ($existance) {
+                    echo "This data exists in the table";                    
+                } else {
+                    echo "This data does not exist in the table";
+                }
+                
+                ?>
+                `
             }
 
         ]
