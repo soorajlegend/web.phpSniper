@@ -19,7 +19,7 @@ type Props = {
 
 const FeaturesBar = ({setDetails, data} : Props) => {
 
-  const [showDetails, setShowDetails] = useState(true);
+  const [showDetails, setShowDetails] = useState(false);
 
   const handleChange = (value: {}) => {
     setDetails(value);

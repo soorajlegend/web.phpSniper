@@ -25,15 +25,7 @@ useEffect(() => {
 
 
 useEffect(() => {
-    // Get the container element
-    const container = document.getElementById("container");
-    const parent = document.getElementById("parent");
-
-    if (container && parent) {
-        // parent.scrollTop = 0;
-        console.log(parent.scrollTop)
-        container.scrollTop = 0;
-      }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [details]);
 
     return (
