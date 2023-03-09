@@ -26,6 +26,9 @@ useEffect(() => {
 
 useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if(Object.keys(details).length === 0){
+        setDetails({ "title": "getStarted" });
+    }
   }, [details]);
 
     return (
