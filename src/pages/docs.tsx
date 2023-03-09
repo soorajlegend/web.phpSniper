@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import FeaturesBar from '../../components/FeaturesBar'
 "use client"
 import DocsDetails from '../../components/DocsDetails';
+import Navbar from '../../components/Navbar';
+import Head from 'next/head';
 
 const Docs = () => {
 
@@ -22,13 +24,34 @@ useEffect(() => {
 }, []);
 
 
+useEffect(() => {
+    // Get the container element
+    const container = document.getElementById("container");
+    const parent = document.getElementById("parent");
+
+    if (container && parent) {
+        // parent.scrollTop = 0;
+        console.log(parent.scrollTop)
+        container.scrollTop = 0;
+      }
+  }, [details]);
+
     return (
-        <div className='min-h-screen flex flex-col md:flex-row md:space-x-16 scroll-smooth md:max-w-5xl lg:max-w-7xl mx-auto px-2'>
+        <>
+        <Head>
+        <title>Php sniper</title>
+        <meta name="php sniper" content="a light weight php library that make interaction with database more efficient" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/phpSniper.png" />
+      </Head>
+        <Navbar />
+        <div id='parent' className='min-h-screen flex flex-col md:flex-row md:space-x-16 overflow-y-scroll scroll-smooth md:max-w-5xl lg:max-w-7xl mx-auto px-2'>
             <FeaturesBar setDetails={setDetails} data={details} />
-            <div className="flex flex-1 flex-col space-y-10 pt-20 md:max-h-[100vh] overflow-y-scroll hide-scrollbar">
+            <div id='container' className="flex flex-1 flex-col space-y-10 pt-20 md:max-h-[100vh] overflow-y-scroll hide-scrollbar scroll-smooth">
                 <DocsDetails data={details} />
             </div>
         </div>
+        </>
     )
 }
 

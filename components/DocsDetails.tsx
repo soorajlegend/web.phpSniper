@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import GetStarted from './GetStarted'
 import Snippet from './Snippet'
 
@@ -21,7 +21,6 @@ const DocsDetails = ({ data }: Props) => {
     if (data?.title === 'getStarted') {
         return <GetStarted />
     }
-
 
     return (
         <div className='md:px-10 space-y-5 py-10'>

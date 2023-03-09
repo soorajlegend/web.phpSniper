@@ -1,11 +1,20 @@
 import Link from 'next/link'
 import React from 'react'
 import { ourFeatures } from "../../store"
+import Navbar from '../../components/Navbar'
+import Head from 'next/head'
 
 const features = () => {
 
     return (
         <>
+        <Head>
+        <title>Php sniper</title>
+        <meta name="php sniper" content="a light weight php library that make interaction with database more efficient" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/phpSniper.png" />
+      </Head>
+        <Navbar />
             <div className="bg-white dark:bg-gray-900">
                 <div className="container px-6 py-10 mx-auto">
                     <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore our <br /> awesome <Link href="/docs" className="underline decoration-blue-500">features</Link></h1>
