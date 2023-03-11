@@ -262,20 +262,20 @@ export const functions = [
   {
     title: "insert data",
     description: `<p>
-        The advanced way to insert a data in a table with a php sniper library, after you configureyour database connection and include sniper.php in you php script 
+        The advanced way to insert a data in a table with a php sniper library, after you configure your database connection and include sniper.php in you php script 
         </p>
         
         <li>1st parameter: the name of the table</li>
-        <li>2nd parameter: the columns you wanted to insert data</li>
+        <li>2nd parameter: the columns you wanted to insert the data</li>
         <li>3rd parameter: the values of the columns passed as the second parameter respectively</li>
         
         check the examples below for more information:
         `,
     examples: [
       {
-        title: "insert data with in a table",
+        title: "insert data in a table",
         description:
-          "to insert data in to a table, all you need is the table name, the columns name and data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
+          "to insert data in to a table, all you need is the table name, the columns name and the data you wanted to insert to the table, the function return true if the data was successfully inserted otherwise false",
         code: `
                 <?php
                 $inserted = insert("users", "name, email, password", "'name_here','example@example.com','12345'");
@@ -291,9 +291,9 @@ export const functions = [
                 ?>`,
       },
       {
-        title: "insert data with in a table in an optimized conditional mode",
+        title: "All in 1 syntax",
         description:
-          "To insert data in to a table, in an optimzed way is to check directily if insert function returns true",
+          "To insert data in to a table in an optimzed way is to check directily if insert function returns true",
         code: `
                 <?php
                 
@@ -321,7 +321,7 @@ export const functions = [
         <li>2nd parameter: the condition (optional), the function will return all if it's null</li>
         <li>3rd parameter: the order_by (optional), the method at which you wanted to fetch the data from database, its null by default  </li>
         <li>4th parameter: the columns you wanted to select(optional), the function will return all columns if it's null</li>
-        <li>5th parameter: DISTINCT if you wanted to select distinct data from a table the tun it true otherwise it's false</li>
+        <li>5th parameter: DISTINCT if you wanted to select distinct data from a table</li>
        
         `,
     examples: [
@@ -358,8 +358,8 @@ if ($data) {
     ],
   },
   {
-    title: "Upadate row",
-    description: `the simples way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
+    title: "Update row",
+    description: `the simplest way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
     
         <li>1st parameter: the name of the table</li>
         <li>2nd parameter: The columns and their new values </li>
@@ -433,9 +433,9 @@ if ($update) {
                 `,
       },
       {
-        title: "Select data with some conditions",
+        title: "Delete data based on some conditions",
         description:
-          "To fetch data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
+          "To delete data based on conditions you've to pass the condition as a second parameter, see the example below for more information",
         code: deleteWithPhpSniper,
       },
     ],
@@ -453,9 +453,9 @@ if ($update) {
         `,
     examples: [
       {
-        title: "Check a single column",
+        title: "Check a single condition",
         description:
-          "Here is an example on how to check a data existance based on single column, and we'll use email column in thwe user table as an example.",
+          "Here is an example on how to check a data existance based on single condition, and we'll use email column in the users table as an example.",
         code: `
                 <?php
                 include "./sniper.php";
@@ -476,7 +476,7 @@ if ($update) {
       {
         title: "Check the existance of data based on multiple columns",
         description:
-          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the users table as an example. ",
         code: `
                 <?php
                 include "./sniper.php";
@@ -498,7 +498,7 @@ if ($update) {
   },
   {
     title: "count rows",
-    description: `in a situations that you wanted to find the number of a particular function base on a particular condition or even with out any condition, then we recomment using <b>countRows(), this function return the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
+    description: `in a situations that you want to find the number of a particular data base on a particular condition or even with out any condition, then we recomment using <b>countRows(), this function returns the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to check the data </li>
         <li>2nd parameter: the condition (optional), to help the function count the only data you want</li>
@@ -524,9 +524,9 @@ if ($update) {
                 `,
       },
       {
-        title: "Check the existance of data based on multiple columns",
+        title: "Check the existance of data based on multiple conditions",
         description:
-          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+          "Here is an example on how to check a data existance based on multiple conditions, and we'll use email and password columns in the user tsable as an example. ",
         code: `
                 <?php
                 include "./sniper.php";
@@ -544,7 +544,7 @@ if ($update) {
   },
   {
     title: "Days between dates",
-    description: `To find the number of days between 2 dates all you need to do is to pass the first and last dates as a parameters of the <b>getDaysBetweenDates()</b>  check the parameters below:<br /> 
+    description: `To find the number of days between 2 dates all you need to do is to pass the first and last dates as a parameters of the <b>getDaysBetweenDates()</b> function , check the parameters below:<br /> 
     
         <li>1st parameter: first date </li>
         <li>2nd parameter: second date</li>
@@ -576,14 +576,13 @@ if ($update) {
                 `,
       },
       {
-        title: "Check the existance of data based on multiple columns",
+        title: "Get the number of days between today and a future date",
         description:
-          "Here is an example on how to check a data existance based on multiple columns, and we'll use email and password columns in the user table as an example. ",
+          "We'll use the getDaysBetweenDates function to get the number of days between today and a future date",
         code: `
                 <?php
                 include "./sniper.php";
                 
-                // Get the number of days between today and a future date
                 $futureDate = '2023-05-01';
 
                 $days = getDaysBetweenDates(date('Y-m-d'), $futureDate);
