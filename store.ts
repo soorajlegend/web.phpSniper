@@ -609,7 +609,7 @@ if ($update) {
         `,
     examples: [
       {
-        title: "Get the number of days between today and a future date",
+        title: "",
         description:
           "Here is an example on how to finf only the upcoming events:",
         code: `
@@ -651,7 +651,7 @@ if ($update) {
                 `,
       },
       {
-        title: "Fteching and filtering events",
+        title: "Fetching and filtering events from database",
         description:
           "Here is an example on how to fetch events example appointments, competitions and other events. And also filter them by their dates ",
         code: `
