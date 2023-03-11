@@ -315,7 +315,7 @@ export const functions = [
   },
   {
     title: "Select All data",
-    description: `The simplest way to select all data from a table weither with condition or not is using fetch selectAll() function, here is the avaiable parameters that will help you select all the data you need from a table <br /> 
+    description: `The simplest way to select all data from a table weither with condition or not is using fetch <b>\`selectAll\`()</b> function, here is the avaiable parameters that will help you select all the data you need from a table <br /> 
     
         <li>1st parameter: the name of the  table</li>
         <li>2nd parameter: the condition (optional), the function will return all if it's null</li>
@@ -359,7 +359,7 @@ if ($data) {
   },
   {
     title: "Update row",
-    description: `the simplest way to updata a row with a new data is by using <b>update()</b> function which has the following parameters <br /> 
+    description: `the simplest way to updata a row with a new data is by using <b>\`update()\`</b> function which has the following parameters <br /> 
     
         <li>1st parameter: the name of the table</li>
         <li>2nd parameter: The columns and their new values </li>
@@ -442,7 +442,7 @@ if ($update) {
   },
   {
     title: "Check existance",
-    description: `In a situation where by you wanted to check if particular data exist in a table, all you need to do is to use <b>rowExists()</b>
+    description: `In a situation where by you wanted to check if particular data exist in a table, all you need to do is to use <b>\`rowExists()\`</b>
         that'll return true if the data is found based on the condition provided otherwise false.  check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to check the data </li>
@@ -498,7 +498,7 @@ if ($update) {
   },
   {
     title: "count rows",
-    description: `in a situations that you want to find the number of a particular data base on a particular condition or even with out any condition, then we recomment using <b>countRows(), this function returns the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
+    description: `in a situations that you want to find the number of a particular data base on a particular condition or even with out any condition, then we recomment using <b>\`countRows()\`, this function returns the number of columns matches, 0 if no row matches</b>  check the parameters below:<br /> 
     
         <li>1st parameter: the name of the table you wanted to check the data </li>
         <li>2nd parameter: the condition (optional), to help the function count the only data you want</li>
@@ -609,9 +609,9 @@ if ($update) {
         `,
     examples: [
       {
-        title: "",
+        title: "Filtering upcoming events from an array of events",
         description:
-          "Here is an example on how to finf only the upcoming events:",
+          "Here is an example on how to find only the upcoming events:",
         code: `
                 <?php
                 include "./sniper.php";
@@ -741,7 +741,7 @@ if ($update) {
   },
   {
     title: "Next event",
-    description: `The <b>getNextEvent()</b> function in PHP Sniper is used to get the next event in an array of events based on the date and time columns provided. It returns the next event as an associative array, or null if there is no next event.<br />Check the parameters below:<br /> 
+    description: `The <b>\`getNextEvent\`()</b> function in PHP Sniper is used to get the next event in an array of events based on the date and time columns provided. It returns the next event as an associative array, or null if there is no next event.<br />Check the parameters below:<br /> 
     
         <li>1st parameter: an array of events</li>
         <li>2nd parameter: the name of the column containing the event dates</li>
@@ -754,7 +754,7 @@ if ($update) {
       {
         title: "Getting the next event based on date only",
         description:
-          "To use the function to get the next event based on date tag only, see the following example",
+          "To use the function to get the next event based on date only, see the following example",
         code: `
                 <?php
                 include "./sniper.php";
@@ -806,7 +806,7 @@ if ($update) {
   },
   {
     title: "Expired events",
-    description: `The <b>getExpiredEvents()</b> function is used to filter and return an array of events from a larger array of events based on a given date column. Specifically, the function filters and returns an array of events whose date in the specified column is past compared with the current time.<br />Check the parameters below:<br /> 
+    description: `The <b>\`getExpiredEvents()\`</b> function is used to filter and return an array of events from a larger array of events based on a given date column. Specifically, the function filters and returns an array of events whose date in the specified column is past compared with the current time.<br />Check the parameters below:<br /> 
     
         <li>1st parameter: an array of events</li>
         <li>2nd parameter: the name of the column containing the event dates</li>
@@ -818,7 +818,7 @@ if ($update) {
       {
         title: "Filtering the expired events from an array",
         description:
-          "To use the function to get the next event based on date tag only, see the following example",
+          "To use the function to get the expired events from an array based on date only, see the following example",
         code: `
                 <?php
                 include "./sniper.php";
@@ -875,7 +875,7 @@ if ($update) {
   },
   {
     title: "Search characters",
-    description: `The function <b>search()</b> takes in two parameters: $data and $query. It returns true if $data contains all the characters in $query and false otherwise.<br />Check the parameters below:<br /> 
+    description: `The function <b>\`search()\`</b> takes in two parameters: $data and $query. It returns true if $data contains all the characters in $query and false otherwise.<br />Check the parameters below:<br /> 
     
         <li>1st parameter: The string to search within.</li>
         <li>2nd parameter: The query string to search for</li>
@@ -924,7 +924,7 @@ if ($update) {
   },
   {
     title: "Currency format",
-    description: `The function <b>currencyFormat()</b> function is used to format a number as currency, with an optional number of decimal places and a currency symbol.Finally, the function adds the currency symbol to the formatted number and returns the resulting string.<br />Check the parameters below:<br /> 
+    description: `The function <b>\`currencyFormat()\`</b> function is used to format a number as currency, with an optional number of decimal places and a currency symbol.Finally, the function adds the currency symbol to the formatted number and returns the resulting string.<br />Check the parameters below:<br /> 
     
         <li>1st parameter: the number to be formatted as currency</li>
         <li>2nd parameter: (optional): the number of decimal places to include in the formatted number. Defaults to 0 if not provided</li>
