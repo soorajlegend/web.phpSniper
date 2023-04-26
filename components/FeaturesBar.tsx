@@ -39,7 +39,7 @@ const current = data?.title;
        </div>
         <div className={`capitalize cursor-pointer w-full rounded-lg px-5 py-2 hover:bg-gray-800 ${current === "getStarted" && "text-blue-500"}`} onClick={() => handleChange({"title": "getStarted"})}>installation</div>
         {
-            functions?.map((each, index) => <div key={index} className={`capitalize cursor-pointer  w-full rounded-lg px-5 py-2 hover:bg-gray-800 ${current === each?.title && "text-blue-500"}`} onClick={() => handleChange(each)}>{each?.title}</div>)
+            functions?.map((each, index) => <div key={index} className={`capitalize cursor-pointer  w-full rounded-lg px-5 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 ${current === each?.title && "text-blue-500"}`} onClick={() => handleChange(each)}>{each?.title}</div>)
         }
     </div>
 
